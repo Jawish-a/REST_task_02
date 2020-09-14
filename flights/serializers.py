@@ -6,19 +6,19 @@ from .models import Flight, Booking
 class FlightSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Flight
-		fields = ['destination', 'time', 'price', 'id']
+		fields = ['id','destination', 'time', 'price']
 
 
 class BookingSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Booking
-		fields = ['flight', 'date', 'id', 'passengers']
+		fields = ['id', 'flight', 'date',]
 
 
 class BookingDetailsSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Booking
-		fields = "__all__"
+		fields = ['id', 'flight', 'date', 'passengers']
 
 
 class BookingUpdateSerializer(serializers.ModelSerializer):
